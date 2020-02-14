@@ -16,6 +16,7 @@
 
 هر تصویر از دو بخش اصلی تشکیل شده است:
 <p>
+ <style>
  menuitem{
  display:block;
 }
@@ -24,6 +25,7 @@ menuitem::before{
  content:"* ";
  color:black;
 }
+</style>
 <menu>
  <menuitem>چیزی که ما به آن نگاه میکنیم</menuitem>
  <menuitem>هدف و مفهومی که در آن تصویر گنجانده شده است</menuitem>
@@ -31,6 +33,7 @@ menuitem::before{
 </p>
 مورد اول توسط انتقال  و سایه‌ها  انجام می‌گیرد، در حالی که مورد دوم توسط دید  اداره می‌گردد. به طور خلاصه:
 <p>
+ <style>
  menuitem{
  display:block;
 }
@@ -39,6 +42,7 @@ menuitem::before{
  content:"* ";
  color:black;
 }
+</style>
 <menu>
  <b>انتقال</b>
  <menuitem>
