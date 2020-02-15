@@ -46,22 +46,22 @@ gganimate نمود.
  <b>مثال</b>
 می‌خواهیم با یک مثال ساده شروع کنیم، در همین راستا ما قصد داریم تعدادی داده ساختگی را جهت تصویر سازی ایجاد کنیم. در برنامه زیر ما سه ستون حاوی مشاهدات تصادفی تولید می‌کنیم. ستون اول به نام A، شامل 50 مشاهده از 1 تا 75 است، به همین ترتیب ستون دوم شامل تعداد مشابه مشاهدات است اما فاصله دامنه مشاهدات متفاوت است.
  <div dir="ltr">
-  '''
+  ```
 <p>> df = data.frame(A=sample(1:75, 50, replace=TRUE),</p>
 <p> B=sample(1:100, 50, replace=TRUE),</p>
-<p> stringsAsFactors = FALSE) </p> 
-  '''
+<p> stringsAsFactors = FALSE) </p>
+  ```
  </div>
 گاهی اوقات ممکن است کاربر نتواند تفاوتی بین دستور زبان  و API قائل شود و تصور کند هر دو یکی هستند، در صورتی که این چنین نیست. دستور زبان یک ساختار تئوری و یک پایه و اساس است که بر اساس آن می‌توان API را تعریف کرد. چندین API می‌توانند یک دستور زبان را به چندین روش متفاوت اجرا کنند. ما سعی کردیم تا حد امکان API gganimate را با API ggplot2 هم تراز کنیم، به نحوی که اختلاف بین دو بسته محو شود. ما با اضافه کردن توابعی از بسته gganimate به نمودار خود، می‌توانیم آن را به یک نمودار متحرک تبدیل کنیم و هنگام چاپ تصویر متحرک به همان روشی که ggplot هنگام چاپ تصویر ارائه می‌شود، انیمیشن نیز ارائه می‌شود. نمونه‌ای از این روش اضافه نمودن تابع transition-reveal به نمودار است به جهت اینکه نمودار به تدریج در طول یک متغیرعددی ظاهر شود.
 <div dir="ltr">
- <font color="blue">
+```
  <p>> library(ggplot2)</p>
  <p>> library(gganimate)</p>
  <p>> ggplot(df, aes(A, B)) </p>
  <p>+     geom_line() +</p>
  <p>+     transition_reveal(A) +</p>
  <p>+     labs(title = 'A: {frame_along}')</p>
- </font>
+```
 </div>
 
 <img src="https://github.com/maryam1710/animation1/blob/master/a2.gif"> 
@@ -70,7 +70,7 @@ gganimate نمود.
 
 آرگومان frame-along موقعیتی را به ما نشان می‌دهد که قاب فعلی با آن مطابقت دارد، (A:41) تفسیر در انیمیشن بسیار مهم است انیمیشن، یک قاب از تعداد زیادی تصاویر متحرک شناخت دو اصطلاح frame  و rendering تشکیل شده است که در نهایت این تصاویر سبب ایجاد نمودار متحرک می‌شوند. تفسیر یک نوع محاسبه برای نتیجه نهایی است. در بسته gganimate، به صورت پیش‌فرض 100 قاب جهت تفسیر وجود دارد، ما می‌توانیم تعداد قاب‌ها را با استفاده پارامتر nframes در تابع animate تنظیم کنیم.
 <div dir="ltr">
- <font color="blue">
+```
  <p>> library(ggplot2)</p>
  <p>> library(gganimate)</p>
  <p>> p = ggplot(df, aes(A, B)) +</p>
@@ -78,16 +78,16 @@ gganimate نمود.
  <p>+     transition_reveal(A) +</p>
  <p>+     labs(title = 'A: {frame_along}')</p>
  <p>> animate(p, nframes = 40)</p>
- <font>
+```
 </div>
 
 ما می‌توانیم میزان زمان صرف شده برای هر قاب در ثانیه را که به طور پیش‌فرض 10 قاب در ثانیه است را توسط پارامتر fps در تابع animate() کنترل کنیم، .
 
 
 <div dir="ltr">
- <font color="blue">
+```
  <p>> animate(p, nframes = 40, fps = 2)</p>
- </font>
+ ```
 </div>
 
 <b>
@@ -99,11 +99,12 @@ gganimate نمود.
 
 
 <div dir="ltr">
- <font color="blue">
-> animate(p, fps = 10, duration = 14, width = 800, height = 400)
- </font>
+```
+ > animate(p, fps = 10, duration = 14, width = 800, height = 400)
+```
 </div>
  </p>
+ 
  <img src="https://github.com/maryam1710/animation1/blob/master/gg.gif"> 
 
  
@@ -112,8 +113,8 @@ gganimate نمود.
 
 <p>
 <div dir="ltr">
- <font color="blue">
-> library(gapminder)</p>
+```
+ > library(gapminder)</p>
 <p>> ggplot(gapminder, aes(gdpPercap, lifeExp, size = pop, colour = country)) +</p>
 +   geom_point(alpha = 0.7, show.legend = FALSE) +<p>
 +   scale_colour_manual(values = country_colors) +<p>
@@ -123,7 +124,7 @@ gganimate نمود.
 +   labs(title = 'Year: {frame_time}', x = 'GDP per capita', y = 'life expectancy') +<p>
 +   transition_time(year) +<p>
 +   ease_aes('linear')<p>
- </font>
+```
 </div>
 
 همانطور که در برنامه بالا مشاهده می‌کنید ابتدا بایستی با استفاده از تابع ggplot و پارامتر geom-point یک نمودار پراکندگی ایجاد کنیم، از آنجایی که هر نقطه از نمودار نشان دهنده یک کشور است پس به کمک گزینه values در پارامتر scale-colour-manual مشخص می‌کنیم که رنگ هر نقطه از نمودار با توجه به رنگ کشور مربوطه مشخص گردد. با توجه به اینکه بیشتر نمایشگرها تقریبا مستطیل شکل هستند، پارامتر facet-wrap به ما این امکان را می‌دهد که ابعاد صفحه نمایش و نحوه نمایش نمودارها را با توجه به تعداد قاره‌ها تنظیم کنیم.
@@ -145,26 +146,26 @@ gganimate نمود.
 
 
 <div dir="ltr">
- <font color="blue">
-> library(ggplot2)<p>
+```
+ > library(ggplot2)<p>
 > p = ggplot(iris, aes(x = Petal.Width, y = Petal.Length)) +<p> 
 +   geom_point()<p>
 > plot(p)<p>
- </font>
+```
 </div>
 
 <img src="https://github.com/maryam1710/animation1/blob/master/trans1.pdf"> 
 
 
 <div dir="ltr">
- <font color="blue">
-> library(gganimate)<p>
+```
+ > library(gganimate)<p>
 > anim = p + <p>
 +   transition_states(Species,<p>
 +                     transition_length = 2,<p>
 +                     state_length = 1)<p>
 > anim<p>
- </font>
+```
 </div>
 
 <img src="https://github.com/maryam1710/animation1/blob/master/g3.gif"> 
@@ -176,11 +177,11 @@ gganimate نمود.
 
 
 <div dir="ltr">
- <font color="blue">
-> anim + <p>
+```
+ > anim + <p>
 + ggtitle('Now showing {closest_state}',<p>
 +         subtitle = 'Frame {frame} of {nframes}')<p>
- </font>
+```
 </div>
 
 انتقال‌های مختلف متغیرهای قاب‌های مختلف را ارائه می‌دهد. توجه داشته باشید که پارامتر closest-state تنها برای تابع transition-states معنا پیدا می‌کند، بنابراین فقط در صورت استفاده از تابع transition-states این پارامتر قابل استفاده است.
@@ -214,12 +215,14 @@ gganimate نمود.
 
 
 <div dir="ltr">
+ ```
 > library(av)<p>
 > library(gganimate)<p>
 > animate(<p>
 +   anim ,<p>
 +   renderer = av_renderer()<p>
 + )<p>
+ ```
 </div>
 
 <img src="https://github.com/maryam1710/animation1/blob/master/a2.html"> 
@@ -229,7 +232,9 @@ gganimate نمود.
 چنانچه بخواهیم نمودار متحرک خود را جهت استفاده‌های بعدی ذخیره کنیم، می‌توانیم از تابع anim-save استفاده کنیم. این تابع بسیار شبیه به تابع ggsave در بسته ggplot2 عمل می‌کند. اگر در تابع مشخص نکنیم که قصد ذخیره کدام نمودار را داریم، این تابع به صورت پیش‌فرض آخرین نمودار را ذخیره می‌کند. نحوه استفاده از تابع anim-save در برنامه زیر نشان داده شده است.
 
 <div dir="ltr"> 
+ ```
 > anim_save(filename, plot name)<p>
+ ```
 </div>
 
 همانطور که در برنامه بالا مشاهده می‌کنید، ابتدا نام پرونده‌ای که می‌خواهیم شی متحرک خود را در آن ذخیره کنیم، ذکر می‌کنیم، سپس نام تصویری را که می‌خواهیم ذخیره کنیم می‌نویسیم.
