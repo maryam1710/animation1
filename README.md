@@ -140,8 +140,7 @@ gganimate نمود.
 > plot(p)<p>
 </div>
 
-<img src="https://github.com/maryam1710/animation1/blob/master/trans1.pdf"> 
-
+[Intro.pdf](https://github.com/maryam1710/animation1/blob/master/transi1.pdf).
 
 <div dir="ltr">
  > library(gganimate)<p>
@@ -204,9 +203,6 @@ gganimate نمود.
 +   renderer = av_renderer()<p>
 + )<p>
 </div>
-
-<img src="https://github.com/maryam1710/animation1/blob/master/a2.html"> 
-
 
 
 چنانچه بخواهیم نمودار متحرک خود را جهت استفاده‌های بعدی ذخیره کنیم، می‌توانیم از تابع anim-save استفاده کنیم. این تابع بسیار شبیه به تابع ggsave در بسته ggplot2 عمل می‌کند. اگر در تابع مشخص نکنیم که قصد ذخیره کدام نمودار را داریم، این تابع به صورت پیش‌فرض آخرین نمودار را ذخیره می‌کند. نحوه استفاده از تابع anim-save در برنامه زیر نشان داده شده است.
