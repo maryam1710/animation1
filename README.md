@@ -132,7 +132,7 @@ gganimate نمود.
 توجه</b>:
 دقت داشته باشید که پیش از فراخوانی بسته gapminder ابتدا بایستی دو بسته usethis و devtools را فراخوانی نمود.
 
-<img src="https://github.com/maryam1710/animation1/blob/master/gap.gif"> 
+<img src="https://github.com/maryam1710/animation1/blob/master/g4.gif"> 
 
 
 <b>مثال</b>
