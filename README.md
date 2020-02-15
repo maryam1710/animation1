@@ -64,7 +64,7 @@ gganimate نمود.
  </font>
 </div>
 
-<img src="images/transi"> 
+<img src="images/g2.gif"> 
 
 
 
