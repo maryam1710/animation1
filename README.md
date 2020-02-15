@@ -64,7 +64,7 @@ gganimate نمود.
  </font>
 </div>
 
-<img src="images/g2.gif"> 
+<img src="https://github.com/maryam1710/animation1/blob/master/trans1.pdf"> 
 
 
 
